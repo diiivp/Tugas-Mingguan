@@ -10,7 +10,9 @@
 
 <article class="mb-5">
 
-    <h2>{{ $berita['judul'] }}</h3>
+    <a href = "/berita/{{ $berita['slug'] }}">
+        <h2>{{ $berita['judul'] }}</h2>
+        </a>
 
     <h3>{{ $berita['penulis'] }}</h3>
 

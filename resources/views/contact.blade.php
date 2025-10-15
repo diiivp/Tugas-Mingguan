@@ -34,10 +34,10 @@
       <?php
         // Data kontak menggunakan array
         $kontak = [
-          "Alamat"    => "Demak, Jawa Tengah",
-          "WhatsApp"  => "+62 857 5582 7684",
-          "Email"     => "adibpratama157@gmail.com",
-          "Instagram" => "@addzzap_"
+          "Alamat"    => "Grobogan, Jawa Tengah",
+          "WhatsApp"  => "088226655764",
+          "Email"     => "suryoooadii@gmail.com",
+          "Instagram" => "@sryooadii"
         ];
       ?>
 
