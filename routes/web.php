@@ -1,6 +1,8 @@
 <?php
 
-use App\Models\berita;
+use App\Models\Berita;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -18,43 +20,14 @@ Route::get('/profile', function () {
     ]);
 });
 
-Route::get('/berita', function () {
-    return view('berita', [
-        "title" => "berita",
-        "data_beritas" => berita::ambildata(),
-    ]);
-});
+Route::get('/berita', [BeritaController::class, 'index']);
+Route::get('/berita/{slug}', [BeritaController::class, 'tampildata']);
 
-Route::get('/berita/{slug}', function ($slug) {
-    $new_berita = berita::caridata($slug);
-
-    if (empty($new_berita)) {
-        abort(404);
-    }
-
-    return view('singleberita', [
-        "title" => "Berita",
-        "new_berita" => $new_berita,
-    ]);
-});
-
-    foreach ($data_berita as $berita) 
-    {
-        if($berita['slug'] == $slug)
-        {
-            $new_berita = $berita; /// $berita => [judul,slug,penulis,konten]
-        }
-           
-    }
-
-    return view('singleberita',[
-        "title" => "Berita",
-        "new_berita" => $new_berita,
-    ]);
+Route::get('/datamahasiswa', [MahasiswaController::class, 'index']);
 
 Route::get('/contact', function () {
     return view('contact', [
         "title" => "contact",
     ]);
-
 });
+

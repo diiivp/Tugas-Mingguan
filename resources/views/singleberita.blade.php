@@ -1,4 +1,3 @@
-@dd($new_berita)
 @extends('layouts.main')
 
 @section('content')
