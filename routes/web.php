@@ -28,6 +28,8 @@ Route::get('/tambahmahasiswa', [MahasiswaController::class, 'tambahmahasiswa'])-
 
 Route::post('/insertdata', [MahasiswaController::class, 'insertdata'])->name( 'insertdata');
 
+Route::post('/tampildata(/id)', [MahasiswaController::class, 'tampildata'])->name( 'tampildata');
+Route::post('/tampildata(/id)', [MahasiswaController::class, 'editdata'])->name( 'editdata');
 
 Route::get('/contact', function () {
     return view('contact', [

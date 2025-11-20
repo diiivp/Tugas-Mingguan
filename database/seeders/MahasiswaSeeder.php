@@ -12,7 +12,7 @@ class MahasiswaSeeder extends Seeder
      */
     public function run(): void
     {
-           DB::table('mahasiswa')->insert([
+           DB::table('mahasiswas')->insert([
             'name' => "Syaiful Maarif",
             'nim' => 132424,
             'prodi' => "Teknik Informatika",

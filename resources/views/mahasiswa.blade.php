@@ -35,8 +35,10 @@
                             <td>{{ $mahasiswa ["nim"] }}</td>
                             <td>{{ $mahasiswa ["prodi"] }}</td>
                             <td>{{ $mahasiswa ["email"] }}</td>
+
                             <td>{{ $mahasiswa ["nohp"] }}</td>
                             <td>
+                                <a href="tampildata/{{ mahasiswa ['id'] }}" class="btn btn-primary"> Edit </a>
                                 <button type="button" class="btn btn-primary btn-sm">Edit</button>
                                 <button type="button" class="btn btn-danger btn-sm">Hapus</button>
                             </td>
