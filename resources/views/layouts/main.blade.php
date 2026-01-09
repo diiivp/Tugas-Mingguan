@@ -33,6 +33,21 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/datamahasiswa">Data Mahasiswa</a>
                 </li>
+
+                @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/login') }}">Login</a>
+                </li>
+                @endguest
+
+                @auth
+                <li class="nav-item">
+                    <form method="POST" action="{{ route('logout') }}" style="display:inline">
+                        @csrf
+                        <button type="submit" class="btn btn-link nav-link" style="display:inline;padding:0">Logout ({{ auth()->user()->name }})</button>
+                    </form>
+                </li>
+                @endauth
             </ul>
         </div>
     </nav>

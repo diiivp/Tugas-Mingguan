@@ -8,7 +8,7 @@
     @csrf
   <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Nama</label>
-        <input type="text" name="nama" id="nama" value="{{ $data->nama }}" class="form-control">
+        <input type="text" name="name" id="name" value="{{ $data->nama }}" class="form-control">
   </div>
   <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Nomor Induk (NIM)</label>
