@@ -15,10 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('nim')->unique();
-            $table->timestamp('prodi')->nullable();
-            $table->string('email')-> unique();
-            $table->rememberToken ('email');
-            $table->timestamps('nohp');
+            $table->string('prodi')->nullable();
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->string('nohp')->nullable();
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

@@ -20,11 +20,13 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         // Create a default admin user if none exists
-        \App\Models\User::firstOrCreate(
+        \App\Models\User::updateOrCreate(
             ['email' => 'admin@example.com'],
             [
                 'name' => 'Admin',
-                'password' => bcrypt('password')
+                'nim' => 'admin001',
+                'nohp' => '08123456789',
+                'password' => bcrypt('admin123')
             ]
         );
     }

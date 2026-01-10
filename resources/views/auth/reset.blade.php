@@ -3,39 +3,29 @@
 @section('content')
 <div class="row justify-content-center mt-5">
     <div class="col-md-6">
-        <h2>Login</h2>
-
-        @if(session('status'))
-            <div class="alert alert-success">{{ session('status') }}</div>
-        @endif
+        <h2>Reset Password</h2>
 
         @if($errors->any())
             <div class="alert alert-danger">{{ $errors->first() }}</div>
         @endif
 
-        <form method="POST" action="{{ url('/login') }}">
+        <form method="POST" action="{{ url('/reset-password') }}">
             @csrf
+            <input type="hidden" name="token" value="{{ $token }}">
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
             </div>
             <div class="form-group">
-                <label for="password">Password</label>
+                <label for="password">New Password</label>
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <div class="form-group">
+                <label for="password_confirmation">Confirm Password</label>
+                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Reset Password</button>
         </form>
-
-        <p class="mt-2">
-            <a href="{{ route('password.request') }}">Forgot your password?</a> |
-            <a href="{{ route('register') }}">Register</a>
-        </p>
     </div>
 </div>
-
-<form method="POST" action="{{ route('login') }}">
-    @csrf
-    ...
-</form>
-
 @endsection
