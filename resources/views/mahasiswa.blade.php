@@ -1,51 +1,75 @@
 @extends('layouts.main')
 
+@section('title', 'Data Mahasiswa')
+
 @section('content')
-    <h1 class="text-center mb-4">Data Mahasiswa</h1>
-    <a href="/tambahmahasiswa">
-      <button type="button" class="btn btn-success mb-3">Tambah Data</button>
+<div class="content-panel card shadow">
+  <h1 class="text-center mb-4">📊 Data Mahasiswa</h1>
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <a href="/tambahmahasiswa" class="btn btn-primary">
+      <i class="fas fa-plus"></i> Tambah Data
     </a>
-    @if ($message = Session::get('success'))
-        <div class="alert alert-success" role="alert">
-            {{ $message }}
-        </div>
-    @endif
-      <table class="table">
-    <div class="row">
-        <div class="col-md-12">
+  </div>
+  <div class="table-responsive">
+    <table class="table table-hover mb-0">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nama</th>
+      <th scope="col">NIM</th>
+      <th scope="col">Program Studi</th>
+      <th scope="col">Email</th>
+      <th scope="col">No. HP</th>
+      <th scope="col">Aksi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php $i=1 ?>
+    @foreach ($data as $mahasiswa)
+    <tr>
+        <th scope="row">{{ $i }}</th>
+        <td>{{ $mahasiswa["name"] }}</td>
+        <td>{{ $mahasiswa["nim"] }}</td>
+        <td>{{ $mahasiswa["prodi"] }}</td>
+        <td>{{ $mahasiswa["email"] }}</td>
+        <td>{{ $mahasiswa["nohp"] }}</td>
+        <td>
+            <a href="tampildata/{{ $mahasiswa['id'] }}" class="btn btn-sm btn-primary">Edit</a>
+            <a href="javascript:void(0)" class="btn btn-sm btn-danger btn-hapus" data-id="{{ $mahasiswa['id'] }}">Hapus</a>
+        </td>
+       
+<?php $i++?>
+    </tr>
+    @endforeach
+  </tbody>
+</table>
+  </div>
+</div>
 
-            <table class="table table-bordered table-striped">
-                <thead class="table-dark">
-                    <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">NIM</th>
-                        <th scope="col">Prodi</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">No. HP</th>
-                        <th scope="col">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @php $i = 1; @endphp
-                    @foreach ($data as $mahasiswa)
-                        <tr>
-                            <td>{{ $i++ }}</td>
-                            <td>{{ $mahasiswa ["name"] }}</td>
-                            <td>{{ $mahasiswa ["nim"] }}</td>
-                            <td>{{ $mahasiswa ["prodi"] }}</td>
-                            <td>{{ $mahasiswa ["email"] }}</td>
-
-                            <td>{{ $mahasiswa ["nohp"] }}</td>
-                            <td>
-                                <a href="tampildata/{{ mahasiswa ['id'] }}" class="btn btn-primary"> Edit </a>
-                                <button type="button" class="btn btn-primary btn-sm">Edit</button>
-                                <button type="button" class="btn btn-danger btn-sm">Hapus</button>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
-    </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const btnHapus = document.querySelectorAll('.btn-hapus');
+    
+    btnHapus.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            const id = this.getAttribute('data-id');
+            
+            Swal.fire({
+                title: "Konfirmasi Hapus",
+                text: "Apakah Anda yakin ingin menghapus data ini?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: 'Ya, Hapus!',
+                cancelButtonText: 'Batal',
+                confirmButtonColor: '#0066CC',
+                cancelButtonColor: '#666666'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '/delete/' + id;
+                }
+            });
+        });
+    });
+});
+</script>
 @endsection

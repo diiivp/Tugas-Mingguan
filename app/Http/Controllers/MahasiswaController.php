@@ -3,16 +3,60 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Mahasiswa;
 
 class MahasiswaController extends Controller
 {
-    // Tambahkan fungsi index di bawah ini
     public function index()
     {
-        // Contoh: mengembalikan teks sederhana untuk testing
-        return "Berhasil memanggil fungsi index di MahasiswaController";
-        
-        // Atau jika ingin memanggil view:
-        // return view('mahasiswa.index'); 
+
+        $data = Mahasiswa::all();
+
+       
+        return view('Mahasiswa', compact('data'),[
+            "title" => "Data Mahasiswa",
+            
+        ]);
     }
+    public function tambahmahasiswa()
+    {
+        return view('tambahmahasiswa',[
+            "title" => "Tambah Data Mahasiswa",
+        ]);
+    }
+
+    public function insertdata(Request $request)
+    {
+        $data = Mahasiswa::create($request->all());
+
+        return redirect()->route('datamahasiswa')->with('success', 'Data Berhasil Di Tambahkan');
+    }
+
+    public function tampildata($id)
+    {
+        $data = Mahasiswa::find($id);
+
+        return view("edit", [
+            "title" => "Edit Mahasiswa",
+            "data" => $data,
+        ]);
+    }
+
+    public function editdata(Request $request, $id)
+    {
+        $data = Mahasiswa::find($id);
+
+        $data->update($request->all());
+
+        return redirect()->route('datamahasiswa')->with('success', 'Data Berhasil Di Edit!');
+    }
+
+public function delete($id)
+{
+    $data = Mahasiswa::find($id);
+    $data->delete();
+    
+    return redirect('/datamahasiswa')->with('success', 'Data Berhasil Dihapus!');
+}
+
 }

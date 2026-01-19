@@ -7,45 +7,46 @@ use Illuminate\Database\Eloquent\Model;
 
 class Berita extends Model
 {
-    private static $data_berita = [
+       private static $data_berita = [
         [
             "judul" => "Kopi Gratis Di Unimus",
             "slug" => "kopi-gratis-di-unimus",
-            "penulis" => "Surya Adi",
+            "penulis" => "Surya",
             "konten" => "Program Kopi Gratis Di Unimus Hanya Menunjukan KTM Saja",
         ],
         [
             "judul" => "Berita Makanan Gratis",
             "slug"=> "berita-makanan-gratis",
-            "penulis" => "Eren",
+            "penulis" => "Adi",
             "konten" => "Program Makanan Gratis Di Unimus Hanya Menunjukan KTM Saja",
         ],
         [
-            "judul" => "Teknologi Informasi DiUnimus Menjadi Prodi Terbaik Di Tahun 2025",
+            "judul" => "Teknologi Informasi Di Unimus Menjadi Prodi Terbaik Di Tahun 2025",
             "slug"=> "teknologi-informasi-diunimus-menjadi-prodi-terbaik-di-tahun-2025",
             "penulis" => "Suad",
-            "konten" => "Prodi Teknlogoi Informasi DiUnimus Menjadi Prodi Terbaik Di Tahun 2025",
+            "konten" => "Prodi Teknlogoi Informasi Di Unimus Menjadi Prodi Terbaik Di Tahun 2025",
         ],
     ];
 
     public static function ambildata()
     {
-        return self::$data_berita;
+        return Self:: $data_berita;
     }
 
-    public static function caridata($slug)
+    public static function caridata ($slug)
     {
-        $data_beritas = Self::$data_berita;
+        $data_beritas = Self:: $data_berita;
 
-        $new_berita = [];
-        foreach($data_beritas as $berita) 
+            $new_berita = [];
+    foreach($data_beritas as $berita)
+    {
+        if ($berita["slug"] === $slug)
         {
-            if($berita["slug"] === $slug)
-            {
-                $new_berita = $berita;
-            }
+            $new_berita = $berita;
         }
+    }
 
-        return $new_berita;
+    return $new_berita;
+
     }
 }
