@@ -53,6 +53,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/insertdata', [MahasiswaController::class, 'insertdata'])->name('insertdata');
     Route::post('/editdata/{id}',[MahasiswaController::class, 'editdata'])->name('editdata');
     Route::get('/delete/{id}', [MahasiswaController::class, 'delete'])->name('mahasiswa.delete');
+    
+    // My Profile routes
+    Route::get('/my-profile', [\App\Http\Controllers\ProfileController::class, 'myProfile'])->name('my-profile');
+    Route::get('/edit-profile', [\App\Http\Controllers\ProfileController::class, 'editProfile'])->name('edit-profile');
+    Route::post('/update-profile', [\App\Http\Controllers\ProfileController::class, 'updateProfile'])->name('update-profile');
 });
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
