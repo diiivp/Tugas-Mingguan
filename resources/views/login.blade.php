@@ -48,10 +48,21 @@
                     </form>
 
                     <hr>
+                    
+                    <div class="mb-3 text-center">
+                        <a href="{{ route('password.request') }}" class="text-muted" style="font-size: 14px;">
+                            Lupa password?
+                        </a>
+                    </div>
+
+                    <p class="text-center text-muted mb-3">
+                        Belum punya akun? <a href="{{ route('register') }}" style="color: #0066CC; font-weight: 600;">Daftar di sini</a>
+                    </p>
+
                     <p class="text-center text-muted mb-3" style="font-weight: 600;">Akun Demo:</p>
                     <div style="background-color: #F5FAFE; padding: 15px; border-radius: 8px; border-left: 4px solid #0066CC;">
                         <p class="mb-1"><strong>Email:</strong> admin@example.com</p>
-                        <p class="mb-0"><strong>Password:</strong> password123</p>
+                        <p class="mb-0"><strong>Password:</strong> password</p>
                     </div>
                 </div>
             </div>
