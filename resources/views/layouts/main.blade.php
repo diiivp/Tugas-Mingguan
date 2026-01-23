@@ -31,6 +31,9 @@
                     <a class="dropdown-item" href="{{ url('/profile') }}">
                         <i class="fas fa-user"></i> Profile
                     </a>
+                    <a class="dropdown-item" href="{{ route('about') }}">
+                        <i class="fas fa-info-circle"></i> Tentang Kami
+                    </a>
                     <a class="dropdown-item" href="/berita">
                         <i class="fas fa-newspaper"></i> Berita
                     </a>
@@ -77,20 +80,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 text-center mb-3 mb-md-0">
-                    <h6 style="color: #0066CC; font-weight: 700;">📝Platform</h6>
-                    <p>Tentang Berita Dan Informasi</p>
+                    <h6 style="color: white; font-weight: 700;">📝Platform</h6>
+                    <p style="color: white;">Tentang Berita Dan Informasi</p>
                 </div>
                 <div class="col-md-4 text-center mb-3 mb-md-0">
-                    <h6 style="color: #0066CC; font-weight: 700;">🔗Links</h6>
-                    <p>
+                    <h6 style="color: white; font-weight: 700;">🔗Links</h6>
+                    <p style="color: white;">
                         <a href="/about">Tentang Kami</a> | 
                         <a href="/contact">Hubungi Kami</a> | 
                         <a href="/berita">Berita</a>
                     </p>
                 </div>
                 <div class="col-md-4 text-center">
-                    <h6 style="color: #0066CC; font-weight: 700;">📞Kontak</h6>
-                    <p>Email: sryoooadii@.com</p>
+                    <h6 style="color: white; font-weight: 700;">📞Kontak</h6>
+                    <p style="color: white;">Email: sryoooadii@.com</p>
                 </div>
             </div>
             <hr style="border-color: #ADD8E6;">

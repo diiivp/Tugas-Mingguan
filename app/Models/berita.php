@@ -22,9 +22,9 @@ class Berita extends Model
         ],
         [
             "judul" => "Teknologi Informasi Di Unimus Menjadi Prodi Terbaik Di Tahun 2025",
-            "slug"=> "teknologi-informasi-diunimus-menjadi-prodi-terbaik-di-tahun-2025",
+            "slug"=> "teknologi-informasi-di-unimus-menjadi-prodi-terbaik-di-tahun-2025",
             "penulis" => "Suad",
-            "konten" => "Prodi Teknlogoi Informasi Di Unimus Menjadi Prodi Terbaik Di Tahun 2025",
+            "konten" => "Prodi Teknologi Informasi Di Unimus Menjadi Prodi Terbaik Di Tahun 2025",
         ],
     ];
 

@@ -33,6 +33,13 @@
             @endif
           </div>
 
+          <div class="mb-4">
+            <label class="form-label" style="color: #0066CC; font-weight: 700;">Biografi</label>
+            <p style="color: #555555; font-size: 1.05rem; padding: 15px; background-color: #F5FAFE; border-radius: 8px; border-left: 4px solid #0066CC; line-height: 1.8;">
+              Saya adalah Suryo Adi Prabowo adalah seorang mahasiswa Teknologi Informasi dari kampus Universitas Muhammadiyah Semarang. Funfact tentang saya adalah saya juga mengikuti Himpunan Mahasiswa Teknologi Informasi (HMTI), selain itu saya juga seseorang yang sangat suka makan Nasi Ayam Bali yang dijual Burjo Ketileng.
+            </p>
+          </div>
+
           <div class="text-center mt-5">
             <a href="/" class="btn btn-primary">← Kembali ke Home</a>
           </div>

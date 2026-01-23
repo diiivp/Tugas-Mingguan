@@ -3,6 +3,36 @@
 @section('title', 'Data Mahasiswa')
 
 @section('content')
+<style>
+  .table {
+    border-collapse: collapse;
+  }
+  
+  .table thead th {
+    border: 1px solid #0066CC;
+    padding: 12px;
+    text-align: center;
+    background-color: #0066CC;
+    color: white;
+    font-weight: 700;
+  }
+  
+  .table tbody td,
+  .table tbody th {
+    border: 1px solid #ADD8E6;
+    padding: 12px;
+    vertical-align: middle;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #F5FAFE;
+  }
+  
+  .table tbody tr {
+    border-bottom: 1px solid #ADD8E6;
+  }
+</style>
+
 <div class="content-panel card shadow">
   <h1 class="text-center mb-4">📊 Data Mahasiswa</h1>
   <div class="d-flex justify-content-between align-items-center mb-4">
